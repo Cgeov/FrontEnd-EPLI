@@ -20,13 +20,13 @@ Route::get('index', function () {
     return view('index');
 });
 
-Route::get('about', function () {
+Route::get('social', function () {
     return view('about');
 });
-Route::get('service', function () {
+Route::get('publicaciones', function () {
     return view('service');
 });
-Route::get('project', function () {
+Route::get('galeria', function () {
     return view('project');
 });
 Route::get('feature', function () {
@@ -41,11 +41,22 @@ Route::get('team', function () {
 Route::get('testimonial', function () {
     return view('testimonial');
 });
-Route::get('404', function () {
+Route::get('articulos', function () {
     return view('404');
 });
-Route::get('contact', function () {
-    return view('quote');
+Route::get('email', function () {
+    return view('email');
 });
 
-Route::get('service', 'App\Http\Controllers\ServiceController@list');
+//Todas las Publicaciones
+Route::get('publicaciones', 'App\Http\Controllers\ServiceController@list');
+
+//Todas los Articulos
+Route::get('articulos', 'App\Http\Controllers\ServiceController@listArticulos');
+
+//Publicaciones individuales
+Route::get('/showservicedetail/{id}', 'App\Http\Controllers\ServiceController@showbyid') -> name('service.showbyid');
+
+//pal email
+Route::get('/email', [App\Http\Controllers\EmailController::class, 'create']);
+Route::post('/email', [App\Http\Controllers\EmailController::class, 'sendEmail'])->name('send.email');

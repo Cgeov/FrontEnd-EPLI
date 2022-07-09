@@ -58,20 +58,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index" class="nav-item nav-link active">Inicio</a>
-                <a href="service" class="nav-item nav-link">Publicaciones</a>
-                <a href="about" class="nav-item nav-link">Articulos</a>
-                <a href="project" class="nav-item nav-link">Talleres</a>
+                <a href="index" class="nav-item nav-link {{ Request::is('index') ? 'active' : '' }}">Inicio</a>
+                <a href="publicaciones" class="nav-item nav-link {{ Request::is('publicaciones') ? 'active' : '' }}">Publicaciones</a>
+                <a href="social" class="nav-item nav-link {{ Request::is('social') ? 'active' : '' }}">Social Media</a>
+                <a href="galeria" class="nav-item nav-link {{ Request::is('galeria') ? 'active' : '' }}">Galeria</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contenido</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="team" class="dropdown-item">Our Team</a>
-                        <a href="testimonial" class="dropdown-item">Testimonial</a>
-                        <a href="404" class="dropdown-item">404 Page</a>
+                        <a href="team" class="dropdown-item">Reportajes y entrevistas</a>
+                        <a href="testimonial" class="dropdown-item">Servicios</a>
+                        <a href="articulos" class="dropdown-item">Artículos</a>
                     </div>
                 </div>
             </div>
-            <a href="contact" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Contactanos<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="email" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Contactanos<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
