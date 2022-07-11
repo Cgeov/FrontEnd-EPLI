@@ -57,6 +57,9 @@ Route::get('articulos', 'App\Http\Controllers\ServiceController@listArticulos');
 //Publicaciones individuales
 Route::get('/showservicedetail/{id}', 'App\Http\Controllers\ServiceController@showbyid') -> name('service.showbyid');
 
+//Galería 
+Route::get('galeria', 'App\Http\Controllers\GalleryController@index');
+
 //pal email
 Route::get('/email', [App\Http\Controllers\EmailController::class, 'create']);
 Route::post('/email', [App\Http\Controllers\EmailController::class, 'sendEmail'])->name('send.email');
